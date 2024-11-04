@@ -6,6 +6,9 @@
     --accent-color-secondary: #adadff;
     --text-color-dark: #000000;
     --text-color-light: #ffffff;
+    --section-sorting-height: 26vh;
+    --section-sorting-width: 20vw;
+    --section-sorting-border-radius: 20%;
 }
 
 /*GENERAL*/
@@ -57,32 +60,81 @@ header li{
 
 main{
     display: flex;
-    display: row;
+    flex-direction: row;
     justify-content: space-between;
-
     min-height: 80vh;
     background-color: var(--background-color);
 
 }
 
 .sortingSection{
-
+    display:flex;
+    flex-direction: column;
+    gap:2vh;
+    width: 20vw;
+    padding-left: 1vw;
 }
 
-.sortingTime{
 
+
+.sortingTime{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: var(--section-sorting-width);
+    border: 2px solid black;
+    border-radius: var(--section-sorting-border-radius);
+    height: var(--section-sorting-height);
 }
 
 .sortingLocation{
-
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    width: var(--section-sorting-width);
+    border: 2px solid black;
+    border-radius: var(--section-sorting-border-radius);
+    height: var(--section-sorting-height);
 }
 
 .sortingType{
+    width: var(--section-sorting-width);
+    border: 2px solid black;
+    border-radius: var(--section-sorting-border-radius);
+    height: var(--section-sorting-height);
+}
 
+.sortingHeader{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1vh;
+    background-color: var(--accent-color-main);
+    margin: 0;
+    width: 100%;
+}
+
+.checkLocationBox{
+    display:flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.containerLand{
+    display:flex;
+}
+
+.containerStad{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .chartSection{
-
+    background-color: lightgray;
+    border-radius: 5em;
+    width:75vw;
+    height: auto;
 }
 
 /*FOOTER*/

@@ -1,67 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <!---
     <input type="file" id="fileInput" accept=".csv" />
     <pre id="output"></pre>
     --->
     <header>
-        <h1>RUBRIK</h1>
-        <nav>
-            <ul>
-                <li><a href="#">LINK</a></li>
-                <li><a href="#">LINK</a></li>
-                <li><a href="#">LINK</a></li>
-            </ul>
-        </nav>
+      <h1>RUBRIK</h1>
+      <nav>
+        <ul>
+          <li><a href="#">LINK</a></li>
+          <li><a href="#">LINK</a></li>
+          <li><a href="#">LINK</a></li>
+        </ul>
+      </nav>
     </header>
 
-
     <main>
-        <section class="sortingSection">
-
-            <section class="sortingTime">
-
-            </section>
-
-            <section class="sortingLocation">
-
-            </section>
-            
-            <section class="sortingType">
-
-            </section>
-
+      <section class="sortingSection">
+        <section class="sortingTime">
+          <h3 class="sortingHeader">Timespan</h3>
+          <label>
+            Time to start at (min 1850):
+            <input type="number" id="startTime" placeholder="1850" style="width: 18vw;">
+          </label>
+          <label>
+            Time to end at (max 2020):
+            <input type="number" id="endTime" placeholder="2020" style="width: 18vw;">
+          </label>
+          <button url="" alt="Klick to choose begining and end to select what span to take a closer look at">
+            TO:DO Calendar</button>
         </section>
 
-        <section class="chartSection">
-
-            <canvas id="chart"></canvas>
-        
+        <section class="sortingLocation">
+          <h3 class="sortingHeader">Location</h3>
+          <section class="checkLocationBox">
+            <label class="containerLand">
+              <input type="checkbox" />Land
+              <span id=""></span>
+            </label>
+            <label class="containerStad">
+                <input type="checkbox" />Stad
+                <span id=""></span>
+            </label>
+            <label class="containerLand">
+                <input type="checkbox" />Land
+                <span id=""></span>
+              </label>
+              <label class="containerStad">
+                  <input type="checkbox" />Stad
+                  <span id=""></span>
+              </label>
+              <label class="containerLand">
+                <input type="checkbox" />Land
+                <span id=""></span>
+              </label>
+              <label class="containerStad">
+                  <input type="checkbox" />Stad
+                  <span id=""></span>
+              </label>
+              <label class="containerLand">
+                <input type="checkbox" />Land
+                <span id=""></span>
+              </label>
+              <label class="containerStad">
+                  <input type="checkbox" />Stad
+                  <span id=""></span>
+              </label>
+          </section>
         </section>
+
+        <section class="sortingType">
+          <h3 class="sortingHeader">Special selection</h3>
+        </section>
+      </section>
+
+      <section class="chartSection">
+        <canvas id="chart"></canvas>
+      </section>
     </main>
 
-
     <footer>
-        <p>
-            INFO STUFF
-        </p>
+      <p>INFO STUFF</p>
 
-        <p>
-           
-        </p> 
-
+      <p></p>
     </footer>
 
     <script src="PapaParse-5.0.2/PapaParse-5.0.2/papaparse.js"></script>
     <script src="chart.js"></script>
     <script src="script.js"></script>
-    
-</body>
+  </body>
 </html>

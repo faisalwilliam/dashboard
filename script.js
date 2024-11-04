@@ -1,26 +1,68 @@
 const ctx = document.getElementById("chart");
 
+//const recordID = [];
+const month = [];
+const day = [];
+const year = [];
+const avgTempFahr = [];
+//const avgTempUncFahr = [];
+const city = [];
+//const countryID = [];
+const country = [];
+//const latitude = [];
+//const longitude = [];
+const date = [];
+var datasets = [];
+
 
 const response = fetch("tmp.csv")
   .then((response) => response.text()) 
   .then((response) => papaParseJson(response))
-  .then((data) => {
+  .then((response) => {
+    createNewData("Ukraine");
+    createNewData("New Zealand");
+    createChart(datasets);
+});
 
-    console.log(data);
-    //console.log("labels: " + labels);
-  });
 
-function createChart(data){
-      new chart(ctx, {
+
+function createNewData(location){
+    var datas = [];
+    for(let i = 0; i < country.length; i++){
+        if(country[i] == location){
+            data = avgTempFahr[i];
+            /*{
+                label: location,
+                data: avgTempFahr[i],
+                backgroundColor: "#00fff0",
+                borderWidth: 3,
+                tension: 0.1,
+            }*/
+            datas.push(data);
+        }
+    }
+    datasets.push(datas);
+}
+
+
+
+function createChart(input){
+      new Chart(ctx, {
       type: "line",
       data: {
-        labels: labels,
-        datasets: [
+        labels: date,
+        datasets: [ //Make funktion to create this instead
           {
-            label: "Temp",
-            data: data,
+            label: "Ukraine",
+            data: input[0],
             backgroundColor: "#00fff0",
-            borderColor: "#00fff0",
+            borderWidth: 3,
+            tension: 0.1,
+          },
+          {
+            label: "New Zealand",
+            data: input[1],
+            backgroundColor: "#002351",
             borderWidth: 3,
             tension: 0.1,
           },
@@ -37,16 +79,28 @@ function createChart(data){
 }
 
 function papaParseJson(tmpCsvData){
-
     Papa.parse(tmpCsvData, {
-    header: true,
-    complete: function(results) {
-        console.log(results.data); 
-    },
+        header: true,
+        complete: function(results) {
+            //console.log("Finished:", results.data); 
+            for (let i = 0; i < results.data.length; i++){
+                //Kanske kan bli fel eftersom month inte är header
+                //recordID.push(results.data[i].record_id)
+                month.push(results.data[i].month)
+                day.push(results.data[i].day)
+                year.push(results.data[i].year)
+                date.push(results.data[i].day + "-" + results.data[i].month + "-" + results.data[i].year)
+                avgTempFahr.push(results.data[i].AverageTemperatureFahr)
+                //avgTempUncFahr.push(results.data[i].AverageTemperatureUncertaintyFahr)
+                city.push(results.data[i].City)
+                //countryID.push(results.data[i].country_id)
+                country.push(results.data[i].Country)
+                //latitude.push(results.data[i].Latitude)
+                //longitude.push(results.data[i].Longitude)
+            }
+        }
     });
 }
-
-
 
 
 /*
