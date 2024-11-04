@@ -1,0 +1,102 @@
+/*VARIABLES*/
+
+:root {
+    --background-color: #f0f0f0;
+    --accent-color-main: #4f578d;
+    --accent-color-secondary: #adadff;
+    --text-color-dark: #000000;
+    --text-color-light: #ffffff;
+}
+
+/*GENERAL*/
+body{
+    margin:0;
+    background-color: var(--accent-color-main);
+}
+
+
+/*HEADER*/
+
+header{
+    display: flex;
+    display:row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 10vh;
+}
+
+header h1{
+
+}
+
+header nav{
+    display: flex;
+    display: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header ul{
+    display: flex;
+    display: row; 
+    justify-content: space-between;
+    align-items: center;
+
+    list-style-type: none;
+}
+
+header li{
+
+    
+}
+
+
+/*MAIN*/
+
+main{
+    display: flex;
+    display: row;
+    justify-content: space-between;
+
+    min-height: 80vh;
+    background-color: var(--background-color);
+
+}
+
+.sortingSection{
+
+}
+
+.sortingTime{
+
+}
+
+.sortingLocation{
+
+}
+
+.sortingType{
+
+}
+
+.chartSection{
+
+}
+
+/*FOOTER*/
+
+footer{
+    display: flex;
+    display: row;
+    justify-content: space-between;
+
+    height: 10vh;
+
+    background-color: var(--accent-color-main);
+}
+
+footer p{
+
+}
