@@ -9,7 +9,7 @@
     --section-sorting-height: 25vh;
     --section-sorting-width: 20vw;
     --section-sorting-border-radius: 20%;
-    --section-border: 2px solid black;
+    --section-border: 2px solid #999;
 }
 
 /*GENERAL*/
@@ -81,6 +81,9 @@ main {
 .sortingSection {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
     gap: 2vh;
     width: 20vw;
 }
@@ -91,7 +94,7 @@ main {
     align-items: center;
     width: 100%;
     height: var(--section-sorting-height);
-    border: 2px solid #999;
+    border: var(--section-border);
     border-radius: var(--section-sorting-border-radius);
     background-color: #e7e8eb;
     padding: 1vh;
@@ -118,6 +121,15 @@ main {
     margin-top: -10px;
     margin-bottom: 0;
     z-index: 1;
+}
+
+.sortingTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-bottom: 1vh;
 }
 
 .sortingTime label {
