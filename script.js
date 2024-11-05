@@ -12,6 +12,7 @@ const country = [];
 //const latitude = [];
 //const longitude = [];
 const date = [];
+
 var datasets = [];
 
 
@@ -77,6 +78,7 @@ function createChart(input){
       },
     });
 }
+
 
 function papaParseJson(tmpCsvData){
     Papa.parse(tmpCsvData, {
